@@ -8,3 +8,5 @@ const customMap = new CustomMap('#map');
 
 console.log(user);
 console.log(company);
+
+customMap.addUser(user);
