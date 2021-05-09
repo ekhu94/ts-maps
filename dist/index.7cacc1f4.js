@@ -444,20 +444,14 @@ id) /*: string*/
 },{}],"3rfh7":[function(require,module,exports) {
 var _User = require('./User');
 var _Company = require('./Company');
+var _CustomMap = require('./CustomMap');
 const user = new _User.User();
 const company = new _Company.Company();
+const customMap = new _CustomMap.CustomMap('#map');
 console.log(user);
 console.log(company);
-new google.maps.Map(document.querySelector('#map'), {
-  center: {
-    lat: 0,
-    lng: 0
-  },
-  zoom: 1,
-  zoomControl: true
-});
 
-},{"./User":"3qrOS","./Company":"4LFTX"}],"3qrOS":[function(require,module,exports) {
+},{"./User":"3qrOS","./Company":"4LFTX","./CustomMap":"4C18S"}],"3qrOS":[function(require,module,exports) {
 var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
 _parcelHelpers.defineInteropFlag(exports);
 _parcelHelpers.export(exports, "User", function () {
@@ -77579,7 +77573,7 @@ module["exports"] = [
   "ლენინაშენის",
   "ლენინგრადის",
   "ლენინის",
-  "��ენის",
+  "ლენის",
   "ლეონიძის",
   "ლვოვის",
   "ლორთქიფანიძის",
@@ -124383,7 +124377,7 @@ module["exports"] = [
   "Rumunsko",
   "Rumunsko",
   "Rusko",
-  "Rusk�� federácia",
+  "Ruská federácia",
   "Rwanda",
   "Rwandská republika",
   "Salvádor",
@@ -135920,7 +135914,7 @@ module.exports = [
   'Trọng Nhân',
   'Trọng Tấn',
   'Trọng Trí',
-  'Tr���ng Tường',
+  'Trọng Tường',
   'Trọng Việt',
   'Trọng Vinh',
   'Trúc Cương',
@@ -137287,6 +137281,25 @@ class Company {
   }
 }
 
-},{"faker":"4IhlT","@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y"}]},["4UKJc","3rfh7"], "3rfh7", "parcelRequire5daa")
+},{"faker":"4IhlT","@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y"}],"4C18S":[function(require,module,exports) {
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+_parcelHelpers.export(exports, "CustomMap", function () {
+  return CustomMap;
+});
+class CustomMap {
+  constructor(el) {
+    this.googleMap = new google.maps.Map(document.querySelector(el), {
+      zoom: 2,
+      zoomControl: true,
+      center: {
+        lat: 0,
+        lng: 0
+      }
+    });
+  }
+}
+
+},{"@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y"}]},["4UKJc","3rfh7"], "3rfh7", "parcelRequire5daa")
 
 //# sourceMappingURL=index.7cacc1f4.js.map
