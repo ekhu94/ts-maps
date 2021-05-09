@@ -448,9 +448,8 @@ var _CustomMap = require('./CustomMap');
 const user = new _User.User();
 const company = new _Company.Company();
 const customMap = new _CustomMap.CustomMap('#map');
-console.log(user);
-console.log(company);
-customMap.addUser(user);
+customMap.addMarker(user);
+customMap.addMarker(company);
 
 },{"./User":"3qrOS","./Company":"4LFTX","./CustomMap":"4C18S"}],"3qrOS":[function(require,module,exports) {
 var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
@@ -18449,7 +18448,7 @@ module["exports"] = [
   "Řásnovka",
   "Říjnová",
   "Římovská",
-  "Ř��movská",
+  "Římovská",
   "Římská",
   "Říčanova",
   "Říčanská",
@@ -132357,7 +132356,7 @@ module["exports"] = [
   "Гришко",
   "Громико",
   "Данилишин",
-  "Да��илко",
+  "Данилко",
   "Демків",
   "Демчишин",
   "Дзюб’як",
@@ -137299,12 +137298,12 @@ class CustomMap {
       }
     });
   }
-  addUser(user) {
+  addMarker(mappable) {
     new google.maps.Marker({
       map: this.googleMap,
       position: {
-        lat: user.location.lat,
-        lng: user.location.lng
+        lat: mappable.location.lat,
+        lng: mappable.location.lng
       }
     });
   }

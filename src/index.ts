@@ -6,7 +6,5 @@ const user = new User();
 const company = new Company();
 const customMap = new CustomMap('#map');
 
-console.log(user);
-console.log(company);
-
-customMap.addUser(user);
+customMap.addMarker(user);
+customMap.addMarker(company);
