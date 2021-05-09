@@ -137299,12 +137299,18 @@ class CustomMap {
     });
   }
   addMarker(mappable) {
-    new google.maps.Marker({
+    const marker = new google.maps.Marker({
       map: this.googleMap,
       position: {
         lat: mappable.location.lat,
         lng: mappable.location.lng
       }
+    });
+    marker.addListener('click', () => {
+      const infoWindow = new google.maps.InfoWindow({
+        content: '<h3>Hi there!</h3>'
+      });
+      infoWindow.open(this.googleMap, marker);
     });
   }
 }
