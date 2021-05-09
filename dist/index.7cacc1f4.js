@@ -467,6 +467,13 @@ class User {
       lng: parseFloat(_fakerDefault.default.address.longitude())
     };
   }
+  markerContent() {
+    return `
+        <div>
+            <h3>User: ${this.name}</h3>
+        </div>
+      `;
+  }
 }
 
 },{"faker":"4IhlT","@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y"}],"4IhlT":[function(require,module,exports) {
@@ -77569,7 +77576,7 @@ module["exports"] = [
   "კურტანოვსკის",
   "კუტუზოვის",
   "ლაღიძის",
-  "ლელაშვილის",
+  "ლელაშვილ��ს",
   "ლენინაშენის",
   "ლენინგრადის",
   "ლენინის",
@@ -121465,7 +121472,7 @@ module["exports"] = [
   "Nadia",
   "Narcisa",
   "Natalia",
-  "Natașa",
+  "Nata��a",
   "Noemi",
   "Nicoleta",
   "Niculina",
@@ -132351,7 +132358,7 @@ module["exports"] = [
   "Городоцький",
   "Гречко",
   "Григоришин",
-  "Гриневецький",
+  "Гриневець��ий",
   "Гриневський",
   "Гришко",
   "Громико",
@@ -137279,6 +137286,14 @@ class Company {
       lng: parseFloat(_fakerDefault.default.address.longitude())
     };
   }
+  markerContent() {
+    return `
+        <div>
+            <h3>Company Name: ${this.name}</h3>
+            <p>${this.catchPhrase}</p>
+        </div>
+      `;
+  }
 }
 
 },{"faker":"4IhlT","@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y"}],"4C18S":[function(require,module,exports) {
@@ -137308,7 +137323,7 @@ class CustomMap {
     });
     marker.addListener('click', () => {
       const infoWindow = new google.maps.InfoWindow({
-        content: '<h3>Hi there!</h3>'
+        content: mappable.markerContent()
       });
       infoWindow.open(this.googleMap, marker);
     });
